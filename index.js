@@ -1,9 +1,9 @@
 "use strict";
 
-var os = require("node:os");
-var path = require("node:path");
+import os from "node:os";
+import path from "node:path";
 
-function replaceHomedir(filepath, replacement) {
+export default function replaceHomedir(filepath, replacement) {
   if (typeof filepath !== "string") {
     throw new Error("Path for replace-homedir must be a string.");
   }
@@ -36,5 +36,3 @@ function replaceHomedir(filepath, replacement) {
 
   return path.normalize(output);
 }
-
-module.exports = replaceHomedir;
