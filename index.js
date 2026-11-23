@@ -2,11 +2,11 @@ import os from "node:os";
 import path from "node:path";
 
 /**
- * Replace user home in a string with another string
+ * Replace user home in a string with another string.
  *
  * @param {string} filepath The user-provided filepath.
- * @param {string | function } replacement Replacement filepath or replacement function to run.
- * @returns {string } The updated file-path.
+ * @param {string | ((match: string, offset: number, input: string) => string)} replacement String to use as the replacement or function to run to produce a replacement string.
+ * @returns {string} The updated file-path.
  */
 export default function replaceHomedir(filepath, replacement) {
   if (typeof filepath !== "string") {
@@ -34,6 +34,7 @@ export default function replaceHomedir(filepath, replacement) {
     let result = replacement;
 
     if (typeof replacement === "function") {
+      // @ts-expect-error - String.replace supplies these arguments
       result = replacement(...args);
     }
 
