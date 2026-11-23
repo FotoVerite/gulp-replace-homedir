@@ -1,8 +1,13 @@
-"use strict";
-
 import os from "node:os";
 import path from "node:path";
 
+/**
+ * Replace user home in a string with another string
+ *
+ * @param {string} filepath The user-provided filepath.
+ * @param {string | function } replacement Replacement filepath or replacement function to run.
+ * @returns {string } The updated file-path.
+ */
 export default function replaceHomedir(filepath, replacement) {
   if (typeof filepath !== "string") {
     throw new Error("Path for replace-homedir must be a string.");
@@ -28,6 +33,7 @@ export default function replaceHomedir(filepath, replacement) {
   var output = filepath.replace(lookupHome, function () {
     var result = replacement;
     if (typeof replacement === "function") {
+      // @ts-expect-error - Preserve native callback forwarding
       result = replacement.apply(this, arguments);
     }
 
