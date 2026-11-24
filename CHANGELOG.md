@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.0.0 (2026-11-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* Convert to ESM ([#13](https://github.com/FotoVerite/gulp-replace-homedir/issues/13))
+* Normalize repository, dropping Node <22.15.0 ([#5](https://github.com/FotoVerite/gulp-replace-homedir/issues/5))
+* Normalize repository, dropping node <10.13 support ([#2](https://github.com/FotoVerite/gulp-replace-homedir/issues/2))
+
+### Features
+
+* Convert to ESM ([#13](https://github.com/FotoVerite/gulp-replace-homedir/issues/13)) ([8880716](https://github.com/FotoVerite/gulp-replace-homedir/commit/88807162cece035e93112b922e0ebe4847c8f8c0))
+* Remove all dependencies and only rely on node APIs ([0a27bc1](https://github.com/FotoVerite/gulp-replace-homedir/commit/0a27bc1775e742ceb5ca3f0f8e3cfd5a84e1f1a4))
+
+
+### Bug Fixes
+
+* Ensure platform independence ([e63da63](https://github.com/FotoVerite/gulp-replace-homedir/commit/e63da63144781b01cd44b2d610bdd86cb21cfbea))
+
+
+### Miscellaneous Chores
+
+* Normalize repository, dropping node &lt;10.13 support ([#2](https://github.com/FotoVerite/gulp-replace-homedir/issues/2)) ([0a27bc1](https://github.com/FotoVerite/gulp-replace-homedir/commit/0a27bc1775e742ceb5ca3f0f8e3cfd5a84e1f1a4))
+* Normalize repository, dropping Node &lt;22.15.0 ([#5](https://github.com/FotoVerite/gulp-replace-homedir/issues/5)) ([946fcdd](https://github.com/FotoVerite/gulp-replace-homedir/commit/946fcdd527e39bb7ab28f5a5746d7598b50836d0))
+
 ## [2.0.0](https://www.github.com/gulpjs/replace-homedir/compare/v1.0.0...v2.0.0) (2022-01-31)
 
 
