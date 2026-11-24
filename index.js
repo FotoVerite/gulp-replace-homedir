@@ -30,12 +30,11 @@ export default function replaceHomedir(filepath, replacement) {
     return filepath;
   }
 
-  const output = filepath.replace(lookupHome, (...args) => {
+  const output = filepath.replace(lookupHome, (match, offset, input) => {
     let result = replacement;
 
     if (typeof replacement === "function") {
-      // @ts-expect-error - String.replace supplies these arguments
-      result = replacement(...args);
+      result = replacement(match, offset, input);
     }
 
     return `${result}${path.sep}`;
